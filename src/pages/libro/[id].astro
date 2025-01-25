@@ -4,6 +4,7 @@ import { SHOW_BUY_BUTTON } from "astro:env/server";
 import Layout from "../../layouts/Layout.astro";
 import BookScore from "../../components/BookScore.astro";
 import BuyButton from "../../components/BuyButton.astro";
+import { Image } from "astro:assets";
 
 export async function getStaticPaths() {
   const books = await getCollection("books");
@@ -28,7 +29,17 @@ export const prerender = true;
     <!-- Sidebar con la imagen -->
     <aside class="flex flex-col items-center gap-4">
       <a href="/" class="hover:underline opacity-70">← Volver atrás</a>
-      <img transition:name={`img-${slug}`} class="rounded w-48 md:w-72 h-auto shadow-lg" src={`/${img}`} alt={title} />
+      <div class="w-48 md:w-72 h-64 md:h-96 overflow-hidden rounded-lg shadow-lg">
+        <Image
+          src={`/${img}`}
+          alt={title}
+          width={288}
+          height={384}
+          format="webp"
+          class="w-full h-full object-cover"
+          loading="eager"
+        />
+      </div>
 
       <BookScore server:defer id={slug}>
         <span slot="fallback" class="text-xs opacity-70">Cargando puntuación...</span>
@@ -37,7 +48,6 @@ export const prerender = true;
       {SHOW_BUY_BUTTON && <BuyButton server:defer buy={buy} />}
     </aside>
 
-    <!-- Main content -->
     <main class="max-w-3xl">
       <h1 transition:name={`title-${slug}`} class="text-3xl md:text-4xl font-bold mb-4">
         {title}
