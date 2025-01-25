@@ -3,7 +3,7 @@ title: "Aprendiendo Git y GitHub: Desde cero hasta buenas prácticas y estrategi
 author: "Miguel Ángel Durán García"
 img: "aprendiendo-git.jpg"
 readtime: "4 horas"
-description: "Este libro ofrece una guía completa sobre Git y GitHub, desde sus orígenes hasta prácticas avanzadas, incluyendo instalación, configuración y estrategias de trabajo en equipo."
+description: "Aprende a usar Git y GitHub para gestionar tus proyectos de código."
 buy:
   bolivia: "https://www.amazon.com/-/es/dp/B0D2LPMG6F"
   usa: "https://www.amazon.com/-/es/dp/B0D2LPMG6F"

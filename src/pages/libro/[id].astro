@@ -28,26 +28,13 @@ export const prerender = true;
     <!-- Sidebar con la imagen -->
     <aside class="flex flex-col items-center gap-4">
       <a href="/" class="hover:underline opacity-70">← Volver atrás</a>
-      <img
-        transition:name={`img-${slug}`}
-        class="rounded w-72 h-auto shadow-lg"
-        src={`/${img}`}
-        alt={title}
-      />
+      <img transition:name={`img-${slug}`} class="rounded w-72 h-auto shadow-lg" src={`/${img}`} alt={title} />
 
       <BookScore server:defer id={slug}>
-        <span slot="fallback" class="text-xs opacity-70"
-          >Cargando puntuación...</span
-        >
+        <span slot="fallback" class="text-xs opacity-70">Cargando puntuación...</span>
       </BookScore>
 
-      {
-        SHOW_BUY_BUTTON && (
-          <div class="flex items-center gap-2">
-            <BuyButton server:defer buy={buy} />
-          </div>
-        )
-      }
+      {SHOW_BUY_BUTTON && <BuyButton server:defer buy={buy} />}
     </aside>
 
     <!-- Main content -->
@@ -59,9 +46,7 @@ export const prerender = true;
         <p class="text-gray-300 italic">
           Escrito por: <span class="font-medium">{author}</span>
         </p>
-        <span
-          class="bg-gray-200 text-gray-800 text-xs font-semibold px-2 py-1 rounded"
-        >
+        <span class="bg-gray-200 text-gray-800 text-xs font-semibold px-2 py-1 rounded">
           {readtime}
         </span>
       </div>
