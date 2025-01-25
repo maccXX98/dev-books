@@ -5,6 +5,7 @@ dist/
 .astro/
 .vscode/
 .vercel/
+.git
 pnpm-lock.yaml
 
 # dependencies
