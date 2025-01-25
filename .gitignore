@@ -4,6 +4,7 @@ dist/
 # generated types
 .astro/
 .vscode/
+.vercel/
 pnpm-lock.yaml
 
 # dependencies
